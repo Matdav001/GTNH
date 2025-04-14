@@ -1,7 +1,7 @@
 # Gtnh setup files
 Easy setup, and installation.
 
-Contains two scripts and a docker compose.
+Contains one script and a docker compose.
 
 ## Setup Guide
 From the working directory, run these commands:
