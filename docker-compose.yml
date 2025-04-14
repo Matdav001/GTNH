@@ -1,0 +1,40 @@
+# Deploying a GTNH server using itzg/minecraft-server
+# Based on a template provided by SgtMate on gtnh wiki.
+# Author: Mateus Vasco
+
+services:
+  gtnh:
+    image: itzg/minecraft-server:java21
+    pull_policy: missing
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565" # Game-server port, change if needed
+      - "25575:25575" # Game-server port, change if needed
+    environment:
+
+      EULA: "TRUE"
+      TYPE: CUSTOM
+      GENERIC_PACK: /server-files/gtnh-2.7.4.zip
+      # if this isn't true, then the container tries to update the modpack every run
+      SKIP_GENERIC_PACK_UPDATE_CHECK: "true"
+      # To update the pack enable this:
+      # FORCE_GENERIC_PACK_UPDATE: "true"
+      # Use during update process for manual intervention:
+      # SETUP_ONLY: true
+      # Disable Whitelist
+      ENABLE_WHITELIST: false
+      CUSTOM_SERVER: "lwjgl3ify-forgePatches.jar"
+      INIT_MEMORY: "8G" # Set initial heap
+      MAX_MEMORY: "22G" # Set max heap
+      JVM_OPTS: "-Dfml.readTimeout=180 @java9args.txt"
+      # Dump content of server.properties file at start (useful for debugging)
+      DUMP_SERVER_PROPERTIES: "TRUE"
+      # Enable minecraft server console access
+      CREATE_CONSOLE_IN_PIPE: "true"
+      # Password for sending commands to console
+      RCON_PASSWORD: "20130526"
+    volumes:
+      - ./mc-data:/data
+      - ./gtnh-server-files:/server-files:ro
