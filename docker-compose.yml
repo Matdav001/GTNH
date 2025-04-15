@@ -25,7 +25,7 @@ services:
       # Use during update process for manual intervention:
       # SETUP_ONLY: true
       # Disable Whitelist
-      ENABLE_WHITELIST: false
+      ENABLE_WHITELIST: true
       CUSTOM_SERVER: "lwjgl3ify-forgePatches.jar"
       INIT_MEMORY: "8G" # Set initial heap
       MAX_MEMORY: "22G" # Set max heap
