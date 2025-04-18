@@ -8,6 +8,4 @@ fi
 if [ ! -f ./mc-data/mods/sharedprospecting-2.0.2.jar ]; then 
 	wget -O ./mc-data/mods/sharedprospecting-2.0.2.jar https://github.com/Lyfts/SharedProspecting/releases/download/2.0.2/sharedprospecting-2.0.2.jar 
 fi
-if [ ! -f ./mc-data/serverutilities/serverutilities.cfg ]; then
 	cp ./gtnh-server-files/mods/configs/serverutilities.cfg ./mc-data/serverutilities/serverutilities.cfg
-fi
