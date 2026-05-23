@@ -17,7 +17,7 @@ services:
       EULA: "TRUE"
       TYPE: CUSTOM
       ONLINE_MODE: false
-      GENERIC_PACK: /server-files/gtnh-2.8.1.zip
+      GENERIC_PACK: /server-files/gtnh-2.8.4.zip
       # if this isn't true, then the container tries to update the modpack every run
       SKIP_GENERIC_PACK_UPDATE_CHECK: "true"
       # To update the pack enable this:
